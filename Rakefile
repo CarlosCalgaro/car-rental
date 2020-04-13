@@ -1,14 +1,11 @@
 
 desc 'Running unit tests'
 task :test do 
-    sh 'rspec'
+    exec 'rspec'
 end
 
-task :run do 
-    puts 'Running the tests ...'  
-    sh 'rspec'
-    puts 'Running the project ...'
-    sh 'ruby ./main.rb'
+task :irb do 
+    exec 'irb -I . -r main.rb'
 end
 
-task :default => :run
+task :default => :irb
