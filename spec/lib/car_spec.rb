@@ -1,40 +1,29 @@
 require 'car'
+require "rubygems"
+require "bundler/setup"
+
+require 'pry'
 
 RSpec.describe Car, "#car" do 
 
-    CAR_TITLE = "Mercedes"
+    let(:car_title){"Mercedes"}
+    subject{ Car.new(car_title) }
+
+    it { is_expected.to respond_to :title }
+    it { is_expected.to respond_to :price_per_day }
+    it { is_expected.to respond_to :price_for_days }
+
     context "In creation" do 
-        it "raises argument error if wrong argument class is passed" do 
-            expect{Car.new(CAR_TITLE, "C200")}.to raise_error(ArgumentError)
-        end
-
-        it "raises argument error if non-existing style is passed" do 
-            expect{Car.new(CAR_TITLE, 999999)}.to raise_error(ArgumentError)
-        end
-
-        it "shouldn't change it's title" do 
-            car = Car.new(CAR_TITLE, Car::SUV)
-            expect(car.title).to eq(CAR_TITLE)
+        it "shouldn't change it's title" do
+            expect(subject.title).to eq(car_title)
         end
     end
 
-    context ".car" do 
-        it "should have a public getter" do 
-            car = Car.new(CAR_TITLE, Car::SUV)
-            expect(car).to respond_to(:title)
+    context ".bonus_points_for_days" do 
+        it "Should return 1" do 
+            days = 1
+            expect(subject.bonus_points_for_days(1)).to eq(1)
         end
     end
 
-
-    context ".days_rented" do 
-        it "should have a public getter" do 
-            car = Car.new(CAR_TITLE, Car::SUV)
-            expect(car).to respond_to(:style)
-        end
-        
-        it "should have a public setter" do 
-            car = Car.new(CAR_TITLE, Car::SUV)
-            expect(car).to respond_to("style")
-        end
-    end
 end
