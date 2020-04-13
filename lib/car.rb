@@ -1,7 +1,6 @@
 require_relative 'car_styles'
 
 class Car
-  include CarStyles
 
   attr_reader :title
   attr_reader :price_per_day
