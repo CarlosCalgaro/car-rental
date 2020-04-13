@@ -29,7 +29,7 @@ class Driver
         amount: total_amount,
         bonus_points: bonus_points
     }.to_json
-
+    
   end
 
   private

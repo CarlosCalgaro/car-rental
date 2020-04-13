@@ -13,10 +13,7 @@ class Rental
   end
 
   def bonus_points
-    bonus_points = 1
-    bonus_points -= 10 if amount < 0
-    bonus_points += 1  if @car.is_a?(Suv) && @days_rented > 1 
-    bonus_points
+   @car.bonus_points_for_days(@days_rented)
   end
   
   def amount

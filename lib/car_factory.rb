@@ -8,13 +8,13 @@ class CarFactory
     def self.get(title, style)
         case style
             when CarStyles::SALOON
-                return Saloon.new(title)
+                return Saloon.new(title.to_s)
             when CarStyles::SUV
-                return Suv.new(title)
+                return Suv.new(title.to_s)
             when CarStyles::HATCHBACK
-                return Hatchback.new(title)
+                return Hatchback.new(title.to_s)
             else
-                raise ArgumentError, "Invalid Car Style"
+                raise ArgumentError, "Error: Invalid Car Style"
         end
     end
 end
