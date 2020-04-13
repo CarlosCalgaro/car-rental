@@ -18,7 +18,7 @@ RSpec.describe Car, "#car" do
         end
     end
 
-    context ".title" do 
+    context ".car" do 
         it "should have a public getter" do 
             car = Car.new(CAR_TITLE, Car::SUV)
             expect(car).to respond_to(:title)
@@ -26,7 +26,7 @@ RSpec.describe Car, "#car" do
     end
 
 
-    context ".style" do 
+    context ".days_rented" do 
         it "should have a public getter" do 
             car = Car.new(CAR_TITLE, Car::SUV)
             expect(car).to respond_to(:style)
