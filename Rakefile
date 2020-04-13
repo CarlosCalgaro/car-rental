@@ -5,6 +5,9 @@ task :test do
 end
 
 task :run do 
+    puts 'Running the tests ...'  
+    sh 'rspec'
+    puts 'Running the project ...'
     sh 'ruby ./main.rb'
 end
 
