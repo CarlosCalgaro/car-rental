@@ -4,12 +4,15 @@ class Car
   include CarStyles
 
   attr_reader :title
-  attr_accessor :style
-
-  def initialize(title, style)
-    raise ArgumentError, "Invalid Style" unless (style.is_a?(Integer) && style < 2)
+  attr_reader :price_per_day
+  
+  def initialize(title)
     @title = title
-    @style = style
+    @price_per_day = nil
+  end
+
+  def price_for_days(days) 
+    days * @price_per_day
   end
 end
   
