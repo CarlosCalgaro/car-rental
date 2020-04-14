@@ -52,8 +52,8 @@ RSpec.describe Rental do
     end
 
     context ".amount" do 
-        it "should return a float" do 
-            expect(subject.amount).to be_a(Float)
+        it "should return a integer" do 
+            expect(subject.amount).to be_a(Integer)
         end
     end
 
