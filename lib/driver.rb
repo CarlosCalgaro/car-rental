@@ -15,9 +15,9 @@ class Driver
   def statement
     statement = "Car rental record for #{@name}\n"
     rentals_as_hash.each do |rental|
-      statement+="#{rental[:car]}, #{rental[:amount]}\n"
+      statement+="#{rental[:car]},#{rental[:amount]}\n"
     end
-    statement += "Amount owed is € #{total_amount}\n"
+    statement += "Amount owed is €#{total_amount}\n"
     statement += "Earned bonus points: #{bonus_points}"
     statement 
   end
