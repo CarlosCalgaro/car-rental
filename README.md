@@ -1,6 +1,6 @@
 # Tech Challenge
 
-This is a software for a tech challenge.
+This is a software refactored for a tech challenge.
 
 ### Below are 3 classes used for making a car rental program 
     -   Improve and simplify the code but don't change the output. We're looking for demonstrated knowledge of Ruby idioms, general good coding practices, and testing
@@ -32,7 +32,19 @@ $ irb -I . -r ./main.rb
 
 That will open an interactive console with the libs loaded
 
-# Running the tests 
+# Running the test examples
+To run the test examples, execute the following commands:
+
+To run the test example of the original(non-refactored) file:
+```
+$ rake examples:original
+```
+
+To run the test example with the refactored project:
+```
+$ rake examples:refactored
+```
+# Running the unitary tests 
 
 This project uses the rspec tests framework. You can run the tests using the command 
 
